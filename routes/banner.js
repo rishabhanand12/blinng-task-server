@@ -5,8 +5,6 @@ let router = express.Router();
 
 router.post("/", upload.fileUploads, upload.handleFileUpload);
 
-router.get("/location", bannerController.getLocation);
-
 router.get("/", bannerController.getBanners);
 
 module.exports = router;

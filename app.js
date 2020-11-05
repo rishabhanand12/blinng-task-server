@@ -6,6 +6,7 @@ const logger = require("morgan");
 const createError = require("http-errors");
 const pool = require("./db");
 const bannerRouter = require("./routes/banner");
+const locationRouter = require("./routes/location");
 let PORT = process.env.PORT || 5000;
 require("dotenv").config();
 
@@ -28,6 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // route handlers
 app.use("/api/banner", bannerRouter);
+app.use("/api/location", locationRouter);
 // catch 404 and forward to error handler
 app.use(function (_req, _res, next) {
   next(createError(404));
